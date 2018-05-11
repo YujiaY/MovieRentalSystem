@@ -1,19 +1,15 @@
 ﻿
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            @Html.ActionLink("Yujia's MovieStore", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
-                <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
-            </ul>
-        </div>
-    </div>
+<div class="container ">
+    <nav class=" navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-brand">
+                @Html.ActionLink("Yujia's MovieStore", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-nav">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active">@Html.ActionLink("Customers", "Index", "Customers")</a>
+                    <a class="nav-item nav-link">@Html.ActionLink("Movies", "Index", "Movies")</a>
+                </div>
+            </div>
+
+    </nav>
 </div>
