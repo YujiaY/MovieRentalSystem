@@ -194,8 +194,37 @@
     <Compile Include="Migrations\201805111502344_AddBirthdateToCustomer1.Designer.cs">
       <DependentUpon>201805111502344_AddBirthdateToCustomer1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805121224557_AddMovie.cs" />
+    <Compile Include="Migrations\201805121224557_AddMovie.Designer.cs">
+      <DependentUpon>201805121224557_AddMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805121349585_AddGenres.cs" />
+    <Compile Include="Migrations\201805121349585_AddGenres.Designer.cs">
+      <DependentUpon>201805121349585_AddGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805121502535_AddInfoForMovie1.cs" />
+    <Compile Include="Migrations\201805121502535_AddInfoForMovie1.Designer.cs">
+      <DependentUpon>201805121502535_AddInfoForMovie1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805131311474_AddInfoForMovie2.cs" />
+    <Compile Include="Migrations\201805131311474_AddInfoForMovie2.Designer.cs">
+      <DependentUpon>201805131311474_AddInfoForMovie2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805131330071_EditInfoForMovie2.cs" />
+    <Compile Include="Migrations\201805131330071_EditInfoForMovie2.Designer.cs">
+      <DependentUpon>201805131330071_EditInfoForMovie2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805131331414_EditInfoAgainForMovie2.cs" />
+    <Compile Include="Migrations\201805131331414_EditInfoAgainForMovie2.Designer.cs">
+      <DependentUpon>201805131331414_EditInfoAgainForMovie2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805131338578_AddInfoForMovie345.cs" />
+    <Compile Include="Migrations\201805131338578_AddInfoForMovie345.Designer.cs">
+      <DependentUpon>201805131338578_AddInfoForMovie345.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -291,6 +320,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -333,6 +363,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805111502344_AddBirthdateToCustomer1.resx">
       <DependentUpon>201805111502344_AddBirthdateToCustomer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805121224557_AddMovie.resx">
+      <DependentUpon>201805121224557_AddMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805121349585_AddGenres.resx">
+      <DependentUpon>201805121349585_AddGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805121502535_AddInfoForMovie1.resx">
+      <DependentUpon>201805121502535_AddInfoForMovie1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805131311474_AddInfoForMovie2.resx">
+      <DependentUpon>201805131311474_AddInfoForMovie2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805131330071_EditInfoForMovie2.resx">
+      <DependentUpon>201805131330071_EditInfoForMovie2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805131331414_EditInfoAgainForMovie2.resx">
+      <DependentUpon>201805131331414_EditInfoAgainForMovie2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805131338578_AddInfoForMovie345.resx">
+      <DependentUpon>201805131338578_AddInfoForMovie345.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

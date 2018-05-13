@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,11 +12,47 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
+        public ViewResult Index()
+        {
+            //var movies = GetMovies();
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
+
+            return View(movies);
+        }
+
+        public ActionResult Details(int id)
+        {
+            //var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+
+
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(movie);
+        }
+
+
+
         // GET: Movies/Random
         public ActionResult Random()
         {
-            //var movie = new Movie() { Name }
-            //var movie = new Movie() { Name };
+
+    
             var movie = new Movie() {Name = "Shrek!"};
             
             //Old version MVC
@@ -61,31 +98,31 @@ namespace Vidly.Controllers
 
         //movies
         //public ActionResult Index(int? pageIndex, string sortBy)
-        public ViewResult Index()
-        {
-            //if (!pageIndex.HasValue)
-            //{
-            //    pageIndex = 1;
-            //}
+        //public ViewResult Index()
+        //{
+        //    //if (!pageIndex.HasValue)
+        //    //{
+        //    //    pageIndex = 1;
+        //    //}
 
-            //if (String.IsNullOrWhiteSpace(sortBy))
-            //{
-            //    sortBy = "Name";
-            //}
+        //    //if (String.IsNullOrWhiteSpace(sortBy))
+        //    //{
+        //    //    sortBy = "Name";
+        //    //}
 
-            //return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
-            var movies = GetMovies();
-            return View(movies);
-        }
+        //    //return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
+        //    var movies = GetMovies();
+        //    return View(movies);
+        //}
 
-        private IEnumerable<Movie> GetMovies()
-        {
-            return new List<Movie>
-            {
-                new Movie {Id = 1, Name = "Shrek"},
-                new Movie {Id = 2, Name = "Wall-e"},
-            };
-        }
+        //private IEnumerable<Movie> GetMovies()
+        //{
+        //    return new List<Movie>
+        //    {
+        //        new Movie {Id = 1, Name = "Shrek"},
+        //        new Movie {Id = 2, Name = "Wall-e"},
+        //    };
+        //}
 
         [Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}|\\d{1}):range(1,12)}")]
         public ActionResult ByReleaseDate(int year, int month)
