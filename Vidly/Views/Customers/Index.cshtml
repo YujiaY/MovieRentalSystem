@@ -40,10 +40,10 @@ else
         @foreach (var customer in Model)
         {
             <tr>
-                <td>@customer.Id</td>
+                <td>@customer.Id @Html.ActionLink("Edit", "Edit", "Customers", new { id = customer.Id }, null)</td>
                 <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
                 <td>@customer.MembershipType.Name</td>
-                <td>@customer.MembershipType.SignUpFee/Month</td>
+                <td>$@customer.MembershipType.SignUpFee/Month</td>
                 <td>@customer.MembershipType.DurationInMonths Months</td>
                 <td>@customer.MembershipType.DiscountRate%</td>
 
